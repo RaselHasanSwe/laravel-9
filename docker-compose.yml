@@ -78,11 +78,7 @@ services:
             - '${FORWARD_ELASTICSEARCH_PORT:-9200}:9200'
             - '${FORWARD_ELASTICSEARCH_PORT:-9300}:9300'
         environment:
-            - cluster.name=autoklose-cluster
-            - bootstrap.memory_lock=true
-            - xpack.security.enabled=false
             - discovery.type=single-node
-            - "ES_JAVA_OPTS=-Xms1G -Xmx1G"
         ulimits:
             memlock:
                 soft: -1
